@@ -1,0 +1,31 @@
+﻿@model CoreDepartment.Models.Personel
+
+<form class="form-group" method="post" asp-controller="Personel" asp-action="AddPersonel">
+
+    <label>Personel Firstname</label>
+    <input class="form-control" asp-for="FirstName" />
+    <br />
+
+    <label>Personel Lastname</label>
+    <input class="form-control" asp-for="LastName" />
+    <br />
+
+    <label>Personel City</label>
+    <input class="form-control" asp-for="City" />
+    <br />
+
+    <label>Personel Department</label>
+    @Html.DropDownListFor(p => p.Department.Id,(List<SelectListItem>)ViewBag.Values, new{@class = "form-control"})
+
+    <br />
+    @*<select>
+        @foreach(var p in ViewBag.deneme)
+        {
+            <option value="@p.Id">@p.DepartmentName</option>
+        }
+    </select>*@
+    
+
+    <button class="btn btn-info">Add Personel</button>
+
+</form>

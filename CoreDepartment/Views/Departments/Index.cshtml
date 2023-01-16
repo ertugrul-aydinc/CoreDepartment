@@ -1,0 +1,29 @@
+﻿@*@{
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}*@
+@model List<CoreDepartment.Models.Department>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Department Name</th>
+        <th>Delete</th>
+        <th>Edit</th>
+        <th>Details</th>
+    </tr>
+
+    @foreach (var dep in Model)
+    {
+        <tr>
+            <td>@dep.Id</td>
+            <td>@dep.DepartmentName</td>
+            <td><a href="/departments/removedepartment/@dep.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/departments/editdepartment/@dep.Id" class="btn btn-success">Edit</a></td>
+            <td><a href="/departments/showdetails/@dep.Id" style="background-color:#dee61d"  class="btn btn-default">Details</a></td>
+        </tr>
+    }
+    
+</table>
+
+<a href="/departments/adddepartment" class="btn btn-primary">Add New Department</a>

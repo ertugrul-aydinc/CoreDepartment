@@ -1,0 +1,30 @@
+﻿@model List<CoreDepartment.Models.Personel>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Personel Name</th>
+        <th>Personel Lastname</th>
+        <th>City</th>
+        <th>Department</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+
+    @foreach (var per in Model)
+    {
+            <tr>
+                <td>@per.Id</td>
+                <td>@per.FirstName</td>
+                <td>@per.LastName</td>
+                <td>@per.City</td>
+                <td>@per.Department.DepartmentName</td>
+                <td><a href="/personel/removepersonel/@per.Id" class="btn btn-danger">Delete</a></td>
+                <td><a href="/personel/editpersonel/@per.Id" class="btn btn-success">Edit</a></td>
+            </tr>
+    }
+
+</table>
+
+<a href="/personel/addpersonel" class="btn btn-primary">Add New Personel</a>

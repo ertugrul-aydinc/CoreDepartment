@@ -1,0 +1,28 @@
+﻿@model List<CoreDepartment.Models.Personel>
+
+<br />
+<h2>@ViewBag.deneme.Department.DepartmentName Detail Page</h2>
+<br />
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Personel Id</th>
+        <th>Personel Name</th>
+        <th>Personel Lastname</th>
+        <th>City</th>
+        @*<th>Department Name</th>*@
+    </tr>
+
+    @foreach (var per in Model)
+    {
+                <tr>
+                    <td>@per.Id</td>
+                    <td>@per.FirstName</td>
+                    <td>@per.LastName</td>
+                    <td>@per.City</td>
+                    @*<td>@per.Department.DepartmentName</td>*@
+                </tr>
+    }
+
+</table>

@@ -1,0 +1,13 @@
+﻿@model CoreDepartment.Models.Department
+
+<form class="form-group" asp-controller="Departments" asp-action="EditDepartment" method="post">
+    
+    <label>Department Id</label>
+    <input class="form-control" asp-for="Id" readonly/>
+    <br />
+    
+    <label>Department Name</label>
+    <input class="form-control" asp-for="DepartmentName" />
+    <br />
+    <button type="submit" class="btn btn-info">Edit Department</button>
+</form>
